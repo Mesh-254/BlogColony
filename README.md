@@ -119,5 +119,5 @@ Thank you for choosing BlogColony, where we're committed to simplifying the blog
 -  Meshack
 -  Mauryn Nyakio
 #### Socials
-- Linkedin : Linkedin-Meshack 
-- Twitter : Twitter-@toMeshack
+- Linkedin : 
+- Twitter : 
