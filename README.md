@@ -1,4 +1,4 @@
-## BlogColony
+## BlogColony - (Connecting Bloggers, Building Communities)
 
 ### Project Overview:
 Welcome to BlogColony, a user-friendly and feature-rich blogging platform designed to empower users to create, publish, and manage their blog posts with ease. This comprehensive **Read Me** file provides a detailed overview of the system requirements, purpose and goals, problem to solve, value to users, features and functionality, notable aspects, unique selling points, and the technologies used in the development of BlogColony.
