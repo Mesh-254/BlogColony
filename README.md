@@ -51,9 +51,62 @@ BlogColony is built using a range of technologies to provide a seamless and reli
 
 - **Frontend:** HTML and CSS for a responsive and user-friendly interface.
 - **Backend:** Flask is used to handle user authentication and manage blog post data securely.
-- **Database:** PostgreSQL is employed for efficient data storage and retrieval.
+- **Database:** MySQL is employed for efficient data storage and retrieval.
 - **Web Server:** The platform is hosted on an Ubuntu server, with NGINX ensuring smooth server operation.
 - **Notable Libraries:** Gunicorn manages HTTP requests, and JavaScript enhances frontend functionality.
+
+### BlogColony Project Roadmap (19 Days)
+
+**Day 1-2: Project Setup and Environment Configuration**
+- Set up the development environment (Python, Flask, PostgreSQL, HTML/CSS).
+- Initialize a new Git repository for version control.
+- Create the project structure, including directories for templates, static files, and Flask application files.
+
+**Day 3-4: Frontend Development**
+- Create the HTML templates for the following pages:
+  - Home page
+  - User registration
+  - User login
+  - Blog post creation/edit
+  - Blog post display
+  - Commenting system
+  - Search functionality
+
+**Day 5-6: User Authentication and Authorization**
+- Implement user registration and login functionality using Flask.
+- Set up password recovery and reset functionality.
+- Ensure secure user authentication and session management.
+
+**Day 7-8: Database Setup and Blog Post Management**
+- Configure and set up the PostgreSQL database.
+- Create the necessary database tables for users, blog posts, and comments.
+- Implement user authorization to create, edit, and delete blog posts.
+
+**Day 9-10: Blog Post Display and Commenting System**
+- Develop the blog post display page, ensuring it shows titles, excerpts, and publication dates.
+- Create a commenting system allowing users to leave comments on blog posts.
+- Integrate comments with the blog post display page.
+
+**Day 11-12: Search Functionality**
+- Implement the search feature to enable users to search for blog posts by keywords or categories.
+- Ensure efficient and accurate search results.
+
+**Day 13-15: Styling and Responsive Design**
+- Apply CSS styles to the templates to enhance the platform's visual appeal.
+- Ensure responsive design for various devices and screen sizes.
+
+**Day 16-17: Testing and Debugging**
+- Conduct thorough testing to identify and fix any issues, including functionality and security checks.
+- Ensure the platform works smoothly and securely.
+
+**Day 18: Documentation and Refinement**
+- Write clear and concise documentation, including the README file, to guide users and developers.
+- Refine and optimize code, addressing any technical debt or areas of improvement.
+
+**Day 19: Deployment and Final Testing**
+- Prepare the platform for deployment to a web server.
+- Deploy BlogColony to the production server (Ubuntu with NGINX).
+- Conduct final testing and ensure everything works in the production environment.
 
 Thank you for choosing BlogColony, where we're committed to simplifying the blogging experience and empowering our users to share their stories effectively. We hope you find this platform to be a valuable and enjoyable tool for your blogging journey.
 
