@@ -110,3 +110,10 @@ BlogColony is built using a range of technologies to provide a seamless and reli
 
 Thank you for choosing BlogColony, where we're committed to simplifying the blogging experience and empowering our users to share their stories effectively. We hope you find this platform to be a valuable and enjoyable tool for your blogging journey.
 
+### Contact Information:
+#### Authors : 
+-  Meshack
+-  Mauryn Nyakio
+#### Socials
+- Linkedin : Linkedin-Meshack 
+- Twitter : Twitter-@toMeshack
