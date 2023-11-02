@@ -1,0 +1,80 @@
+/* Common styles for all pages */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Text color for the entire page */
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Background color for the main content container */
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    /* Styles for tablets and smaller screens */
+    .container {
+      padding: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Styles for mobile devices */
+    .container {
+      padding: 5px;
+    }
+  }
+  
+  /* Page-specific styles */
+  h1 {
+    text-align: center;
+    color: #0074d9; /* Heading text color */
+    margin: 20px;
+  }
+  
+  .content-section {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-label-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Customize the registration form elements, if needed */
+  .form-button {
+    background-color: #0074d9; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Link color */
+  a {
+    color: #0074d9;
+  }
+  
+  /* Customize other elements as needed */  
