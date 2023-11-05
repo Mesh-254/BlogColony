@@ -1,0 +1,47 @@
+{%extends "layout.html" %}
+{% block content%}
+<div class="content-section">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>{{ legend }}</legend>
+            <div>
+                <!-- label -->
+                {{ form.title.label(class="form-label") }}
+
+                {% if form.title.errors %}
+                    {{ form.title }}
+                        <div>
+                            {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                {% else %}
+                    <!-- input field part -->
+                    {{ form.title(class="form-label-field") }}
+                {% endif %}
+                
+            </div>
+            <div>
+                <!-- label -->
+                {{ form.content.label(class="form-label") }}
+
+                {% if form.content.errors %}
+                    {{ form.content }}
+                        <div>
+                            {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                {% else %}
+                    <!-- input field part -->
+                    {{ form.content(class="form-label-field") }}
+                {% endif %}
+                
+            </div>
+
+        </fieldset>
+        <div>
+            {{ form.submit(class="form-label") }}
+        </div>
+{% endblock content %}

@@ -1,4 +1,17 @@
 {%extends "layout.html" %}
 {% block content%}
-    <h1>home page</h1>
+    {% for post in posts %}
+        <article>
+            <img src="{{ url_for('static', filename='pictures/' + post.author.image_file) }}" alt="">
+            <div>
+                <large> {{ post.author.username }} </large>
+                <small> {{post.date_posted.strftime('%Y-%m-%d') }} </small>
+                
+            </div>
+            <div>
+                <h2><a href="{{ url_for('post', post_id=post.id)}}">{{ post.title }}</a></h2>
+                <p>{{post.content}}</p>
+            </div>
+        </article>
+    {% endfor%}
 {% endblock content %}

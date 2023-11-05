@@ -19,6 +19,8 @@ db.create_all()
 
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
+# 'login' - function name
 login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 
 from app import routes

@@ -12,6 +12,27 @@
     <link rel="stylesheet" href="/static/styles.css"> <!-- Link your CSS file here -->
 </head>
 <body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+
+        </nav>
+
+        <nav class="logout">
+            <!-- if user  is logged in then the route that should be displayed is the logut route  -->
+            {% if current_user. is_authenticated %}
+            <a href="{{ url_for('new_post') }}">New Post</a>
+            <a href="/account">Account</a>
+            <a href="/logout">logout</a>
+            {% else %}
+            <a href="/login">Login</a>
+            <a href="/register"> SignUp</a>
+            {% endif %}
+        </nav>
+
+        
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
