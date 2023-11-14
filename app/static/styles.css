@@ -13,6 +13,10 @@ body {
     padding: 20px;
     background-color: #fff; /* Background color for the main content container */
   }
+
+  .current_page {
+    color: orangered;
+  }
   
   /* Responsive design */
   @media screen and (max-width: 768px) {
