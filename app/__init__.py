@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import *
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -15,6 +15,10 @@ login_manager.login_message_category = 'info'
 
 def create_app(config_class=Config):
     app = Flask(__name__)
+    
+    # Set strict_slashes to False
+    app.url_map.strict_slashes = False
+
     app.config.from_object(config_class)
 
     db.init_app(app)
@@ -31,5 +35,9 @@ def create_app(config_class=Config):
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+
+    @app.route('/main')
+    def main():
+        return render_template('main/index.html')
 
     return app
