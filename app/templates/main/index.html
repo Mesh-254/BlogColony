@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage-BlogColony</title>
+    <!-- Links to Google Fonts for font styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:700&display=swap" rel="stylesheet">
+
+    <!-- Add the Bootstrap CSS link here -->
+
+    <!-- Links to an external stylesheet (CSS) called 'style.css' using Flask's 'url_for' function -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="header-section">
+            <div class="logo">
+                <a href="#">
+                    <h2>BlogColony</h2>
+                </a>
+            </div>
+            <div class="nav-items">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Post</a></li>
+                <li class="nav-item">
+                    <form class="input-group">
+                        <input class="form-control border-success" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-success m-0" type="submit">Search</button>
+                    </form>
+                </li>
+
+            </div>
+            <div class="nav-right">
+                <li class="nav-item"><a class="nav-link" href="#">sign In</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+            </div>
+        </div>
+    </header>
+    <!--End of the Header section -->
+
+
+    <!-- main section -->
+    <main>
+        <!-- Main Hero section -->
+        <section class="blog-posts">
+
+            <div class="container">
+
+                <div class="blogs-row">
+
+                    <div class="blog-1">
+
+                        <div class="card">
+                            <span class="card-featured" title="Featured post"><i class="fas fa-star"></i></span>
+                            <div class="card-img-overlay">
+
+                                <div class="w-100">
+
+                                    <a href="#" class="badge-category"><i
+                                            class="fas fa-circle me-2 small fw-bold"></i>Lifestyle</a>
+
+                                    <h2 class="text-h1"><a href="post-single-4.html" class="btn-link">Ten
+                                            tell-tale signs you need to
+                                            get a new startup </a></h2>
+
+                                    <p class="text-white">No visited raising gravity outward subject my cottage Mr be.
+                                        Hold do at tore in park feet near my case.  tell-tale signs you need to
+                                        get a new startup</p>
+
+                                    <ul class="nav-divider">
+
+                                        <li class="blog-detail">
+
+                                            <div class="blog-link">
+
+                                                <div class="user-detail">
+
+                                                    <div class="avatar avatar-sm">
+
+                                                        <img class="avatar-img rounded-circle"
+                                                            src="{{url_for('static', filename='pictures/01.jp')}}"
+                                                            alt="avatar">
+
+                                                    </div>
+
+                                                    <span class="user-name">by <a href="#"
+                                                            class="stretched-link text-reset btn-link">Louis</a></span>
+
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+
+                                        <li class="blog-detail">Nov 15, 2022</li>
+
+                                        <li class="blog-detail">5 min read</li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="blog-2">
+                        <div class="blog-row-1">
+
+                            <div class="card-row-1">
+
+                                <div class="card-overlay">
+
+                                    <div class="blog-row-detail">
+
+                                        <a href="#" class="badge"><i
+                                                class="fas fa-circle me-2 small fw-bold"></i>Technology</a>
+
+                                        <h4 class="text-white"><a href="post-single-4.html" class="btn-link">Best
+                                                Pinterest boards for
+                                                learning about business</a></h4>
+
+                                        <ul class="nav nav-divider">
+
+                                            <li class="nav-item">
+
+                                                <div class="nav-link">by <a href="#"
+                                                        class="stretched-link text-reset btn-link">Bryan</a>
+
+                                                </div>
+
+                                            </li>
+
+                                            <li class="nav-item">Aug 18, 2022</li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="blog-row-2">
+                            <div class="blog-2-detail">
+
+                                <div class="row2-card">
+
+                                    <div class="card-img-overlay">
+
+                                        <div class="blog-row2-detail">
+
+                                            <a href="#" class="badge"><i
+                                                    class="fas fa-circle me-2 small fw-bold"></i>Business</a>
+
+                                            <h4 class="text-white"><a href="post-single-4.html" class="btn-link">Five
+                                                    intermediate guide
+                                                    to business</a></h4>
+
+                                            <ul class="nav nav-divider">
+
+                                                <li class="blog-detail">
+
+                                                    <div class="user-name">by <a href="#"
+                                                            class="stretched-link text-reset btn-link">Joan</a>
+
+                                                    </div>
+
+                                                </li>
+
+                                                <li class="blog-detail">Jun 03, 2022</li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="blog-2-detail">
+
+                                <div class="row2-card">
+
+                                    <div class="card-img-overlay">
+
+                                        <div class="blog-row2-detail">
+
+                                            <a href="#" class="badge"><i
+                                                    class="fas fa-circle me-2 small fw-bold"></i>Business</a>
+
+                                            <h4 class="text-white"><a href="post-single-4.html" class="btn-link">Five
+                                                    intermediate guide
+                                                    to business</a></h4>
+
+                                            <ul class="nav nav-divider">
+
+                                                <li class="blog-detail">
+
+                                                    <div class="user-name">by <a href="#"
+                                                            class="stretched-link text-reset btn-link">Joan</a>
+
+                                                    </div>
+
+                                                </li>
+
+                                                <li class="blog-detail">Jun 03, 2022</li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- End of main section -->
+
+    <!-- Footer section -->
+    <footer>
+
+    </footer>
+    <!-- End of Footer section -->
+</body>
+
+</html>

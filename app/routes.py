@@ -11,7 +11,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 @login_required
 def home():
     posts = Post.query.all()
-    return render_template('home.html', posts=posts)
+    return render_template('main/index.html', posts=posts)
 
 @app.route('/about/')
 def about():
