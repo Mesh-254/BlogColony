@@ -7,8 +7,8 @@
                 <small> {{post.date_posted.strftime('%Y-%m-%d') }} </small>
                 {% if post.author == current_user %}
                     <div>
-                        <a href="{{'update_post', post_id=post.id}}">Update</a>
-                        <button type="button">Delete</button>
+                        <button><a href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a></button>
+                        <button><a href="{{ url_for('posts.delete_post', post_id=post.id) }}">Delete</a></button>
                     </div>
                 {% endif%}
             </div>
@@ -17,4 +17,5 @@
                 <p>{{post.content}}</p>
             </div>
         </article>
+        <!-- Delete Modal -->
 {% endblock content %}
