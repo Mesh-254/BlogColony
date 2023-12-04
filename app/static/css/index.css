@@ -221,7 +221,7 @@ template {
 body {
   margin: 0;
   padding: 0;
-  background-color: #fffafa;
+  background-color: whitesmoke;
 }
 
 /* Header section */
@@ -295,24 +295,23 @@ header {
   padding: 20px;
 }
 .blogs-row {
-  border: 2px solid red;
   display: flex;
   flex-direction: row;
   gap: 20px;
-  height: 500px;
+  height: auto;
   flex-wrap: wrap;
-  width: 100%;
+  /* margin-bottom: auto; */
 }
+
 .blog-1 {
-  border: 2px solid green;
   background-image: url("/static/pictures/01.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
-  height: 100%;
-  max-width: 50%;
-  overflow: hidden; 
+  max-width: 100%;
+  overflow: hidden;
+  flex-grow: 2; 
 }
 .w-100 {
   display: flex;
@@ -320,12 +319,10 @@ header {
   align-items:self-start;
   margin-top:280px ;
   
+  
 }
-.w-100 h2 {
-    /* max-width: 300px; */
-}
+
 .w-100 p {
-    /* max-width: 300px; */
     text-shadow: #353535;
     color: whitesmoke;
 }
@@ -338,6 +335,16 @@ header {
   text-shadow: #353535;
   color: whitesmoke;
 }
+
+.w-100 .text-white {
+  border-radius: 10px;
+  background-color: #333; /* Add a background color for better visibility */
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  max-width: 600px;
+}
+
 .nav-divider {
   display: flex;
   gap: 20px;
@@ -348,18 +355,14 @@ header {
   flex-direction: row;
 }
 .blog-2 {
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   gap: 10px;
-  height: 100%;
   justify-content: space-between;
-  max-width: 50%;
 }
 
 .blog-row-1 {
-  border: 2px solid black;
   background-image: url("/static/pictures/03.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -370,15 +373,14 @@ header {
 }
 
 .blog-row-2 {
-  border: 2px solid black;
   display: flex;
   gap: 10px;
   justify-content: space-between;
   height: 50%;
-  overflow: hidden; 
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 .blog-2-detail {
-  border: 2px solid red;
   background-image: url("/static/pictures/04.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -387,10 +389,138 @@ header {
   border-radius: 10px;
 }
 
+/* BLOG HIGHLIGHTS SECTION */
+.blog-highlights {
+}
+.highlight-head{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.highlight-head h2{
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.blog-items{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 15px;
+}
+
+.blog-items .card{
+  display: flex;
+  flex-direction: column;
+  max-width: 31%;
+  height: auto;
+  padding: 10px;
+
+}
+.card-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  max-width:100%;
+}
+
+.user-info{
+  display: flex;
+  align-items:center;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.card-info h4 a{
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform:inherit;
+}
+
+/* CATEGORIES SECTION STYLING */
+.categories-head{
+  margin-top: 80px;
+  text-align: center;
+}
+.welcome-container {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.welcome-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 230px;
+}
+.welcome-icons h4{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.welcome-icons h4 a{
+  text-decoration: none;
+}
+
+.w-6 {
+  width: 55px;
+}
+
+.welcome-text {
+  margin-top: 2px;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #071629;
+  color: var(--color-white);
+}
+.footer p{
+text-align: center;
+
+}
+
+#mainFooter {
+  
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-nav {
+  display: flex;
+  color: var(--color-white);
+  gap: 10px;
+
+}
+
+
+
+
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
     .blog-1,
     .blog-2 {
       max-width: 100%; /* Allow the cards to take full width on smaller screens */
+    }
+    .blog-items{
+      display: flex;
+      flex-wrap: wrap;
     }
   }
