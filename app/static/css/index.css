@@ -228,8 +228,10 @@ body {
 header {
   font-family: "Montserrat", Cursive;
   font-weight: 600;
-  color: #330797;
+  color: navy;
   font-size: 18px;
+  /* background-color: #071629; */
+  /* color: var(--color-white); */
 }
 
 .header-section {
@@ -265,7 +267,7 @@ header {
   align-items: center;
 }
 .nav-link:hover {
-  color: seagreen; /* Optional: Change the color on hover */
+  color: red; /* Optional: Change the color on hover */
 }
 .nav-item a {
   position: relative;
@@ -390,8 +392,7 @@ header {
 }
 
 /* BLOG HIGHLIGHTS SECTION */
-.blog-highlights {
-}
+
 .highlight-head{
   padding: 20px;
   display: flex;
@@ -491,7 +492,6 @@ header {
 }
 .footer p{
 text-align: center;
-
 }
 
 #mainFooter {
@@ -509,9 +509,6 @@ text-align: center;
   gap: 10px;
 
 }
-
-
-
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
