@@ -19,12 +19,14 @@
     <!-- Header section -->
     <header>
         <div class="header-section">
+            {% if current_user.is_authenticated %}
             <div class="logo">
                 <a href="#">
 
                     <h2><span style="color: red;">Blog</span><span style="color: navy" >Colony</span></h2>
                 </a>
             </div>
+            
             <div class="nav-items">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
@@ -36,13 +38,15 @@
                         <button class="btn btn-success m-0" type="submit">Search</button>
                     </form>
                 </li>
-
+                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('users.logout') }}">sign Out</a></li>
             </div>
+            {% else %}
             <div class="nav-right">
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('users.login') }}">sign In</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('users.register') }}">Sign Up</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
             </div>
+            {% endif %}
         </div>
     </header>
     <!--End of the Header section -->
