@@ -36,8 +36,9 @@ def create_app(config_class=Config):
     app.register_blueprint(posts)
     app.register_blueprint(main)
 
-    @app.route('/main')
-    def main():
+    @app.route('/')
+    @app.route('/home')
+    def index():
         return render_template('main/index.html')
 
     return app
