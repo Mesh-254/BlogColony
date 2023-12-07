@@ -10,38 +10,52 @@
                 {{ form.title.label(class="form-label") }}
 
                 {% if form.title.errors %}
-                    {{ form.title }}
-                        <div>
-                            {% for error in form.title.errors %}
-                            <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
+                {{ form.title }}
+                <div>
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
                 {% else %}
-                    <!-- input field part -->
-                    {{ form.title(class="form-label-field") }}
+                <!-- input field part -->
+                {{ form.title(class="form-label-field") }}
                 {% endif %}
-                
+
+            </div>
+            <div>
+                {{ form.image.label(class="form-label") }}
+
+                {% if form.image.errors %}
+                {{ form.image(class="form-label-field is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.image.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.image(class="form-label-field") }}
+                {% endif %}
             </div>
             <div>
                 <!-- label -->
                 {{ form.content.label(class="form-label") }}
 
                 {% if form.content.errors %}
-                    {{ form.content }}
-                        <div>
-                            {% for error in form.content.errors %}
-                            <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
+                {{ form.content }}
+                <div>
+                    {% for error in form.content.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
                 {% else %}
-                    <!-- input field part -->
-                    {{ form.content(class="form-label-field") }}
+                <!-- input field part -->
+                {{ form.content(class="form-label-field") }}
                 {% endif %}
-                
+
             </div>
 
         </fieldset>
         <div>
             {{ form.submit(class="form-label") }}
         </div>
-{% endblock content %}
+        {% endblock content %}
