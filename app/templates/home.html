@@ -1,6 +1,6 @@
 {%extends "layout.html" %}
 {% block content%}
-    {% for post in posts.items %}
+    {% for post in posts%}
         <article>
             <img src="{{ url_for('static', filename='pictures/' + post.author.image_file) }}" alt="">
             <div>
@@ -14,15 +14,6 @@
             </div>
         </article>
     {% endfor%}
-    <!-- {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2 ) %}
-        {% if page_num %}
-            {% if posts.page == page_num %}
-                <a class="current_page" href="{{ url_for('main.home', page=page_num )}}">{{ page_num }}</a>
-            {% else %}
-                <a href="{{ url_for('main.home', page=page_num )}}">{{ page_num }}</a>
-            {% endif %}
-        {% else %}
-            ...
-        {% endif %}
-    {% endfor%} -->
+
+  
 {% endblock content %}
