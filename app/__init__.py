@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from app.config import Config
+from flask_migrate import Migrate
 
 # Create a db instance
 db = SQLAlchemy()
@@ -20,6 +21,11 @@ def create_app(config_class=Config):
     app.url_map.strict_slashes = False
 
     app.config.from_object(config_class)
+
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    migrate = Migrate(app, db)
+
 
     db.init_app(app)
     bcrypt.init_app(app)
