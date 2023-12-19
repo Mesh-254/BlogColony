@@ -1,7 +1,9 @@
-gitignore
+.gitignore
 .venv
 __pycache__
 migrations
-gitignore
+.gitignore
 .instance
+.idea
+.gitignore
 

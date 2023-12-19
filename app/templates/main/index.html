@@ -28,8 +28,8 @@
             </div>
             
             <div class="nav-items">
-                <li class="nav-item"><a class="nav-link" href="{{url_for('main.all_posts')}}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url_for('main.all_posts')}}">Blogs</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('posts.new_post') }}">Post</a></li>
                 <li class="nav-item">
                     <form class="input-group">
@@ -256,168 +256,68 @@
 
             <!-- blogs div  -->
             <div class="blog-items">
-                <div class="card">
+{% for post in post %}
+              <div class="card">
+
                     <div class="image-div">
                         <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">
                     </div>
                     <div class="card-info">
+
                         <h4 class="card-title"><a href="#" class="card-link">
-                                worst types of business accounts you follow on Twitter</a></h4>
+                                {{ post.title }}</a></h4>
 
-                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all
-                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>
+                        <p class="card-text">{{ post.content }}</p>
 
                         <ul class="user-info">
-                            <li class="user-item">
+                            <div class="user-item">
                                 <div class="user-link">
                                     <div class="d-flex align-items-center position-relative">
                                         <div class="avatar avatar-xs">
-                                            <img class="avatar-img" src="#" alt="avatar">
+                                            <img class="avatar-img" src="/static/pictures/{{ post.author.image_file}}" alt="avatar">
                                         </div>
                                         <span class="ms-3">by <a href="#"
-                                                class="stretched-link text-reset btn-link">Samuel</a></span>
+                                                class="stretched-link text-reset btn-link">{{ post.author.username }}</a></span>
+                                        <div class="item-date">{{post.date_posted.strftime('%Y-%m-%d %H:%M')}}</div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="item-date">Jan 22, 2022</li>
+                            </div>
+
                         </ul>
+
                     </div>
+
                 </div>
-                <div class="card">
-                    <div class="image-div">
-                        <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">
-                    </div>
-                    <div class="card-info">
-                        <h4 class="card-title"><a href="#" class="card-link">
-                                worst types of business accounts you follow on Twitter</a></h4>
+                {% endfor %}
 
-                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all
-                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>
+{#                <div class="card">#}
+{#                    <div class="image-div">#}
+{#                        <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">#}
+{#                    </div>#}
+{#                    <div class="card-info">#}
+{#                        <h4 class="card-title"><a href="#" class="card-link">#}
+{#                                worst types of business accounts you follow on Twitter</a></h4>#}
+{##}
+{#                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all#}
+{#                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>#}
+{##}
+{#                        <ul class="user-info">#}
+{#                            <li class="user-item">#}
+{#                                <div class="user-link">#}
+{#                                    <div class="d-flex align-items-center position-relative">#}
+{#                                        <div class="avatar avatar-xs">#}
+{#                                            <img class="avatar-img" src="#" alt="avatar">#}
+{#                                        </div>#}
+{#                                        <span class="ms-3">by <a href="#"#}
+{#                                                class="stretched-link text-reset btn-link">Samuel</a></span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </li>#}
+{#                            <li class="item-date">Jan 22, 2022</li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
 
-                        <ul class="user-info">
-                            <li class="user-item">
-                                <div class="user-link">
-                                    <div class="d-flex align-items-center position-relative">
-                                        <div class="avatar avatar-xs">
-                                            <img class="avatar-img" src="#" alt="avatar">
-                                        </div>
-                                        <span class="ms-3">by <a href="#"
-                                                class="stretched-link text-reset btn-link">Samuel</a></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item-date">Jan 22, 2022</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="image-div">
-                        <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">
-                    </div>
-                    <div class="card-info">
-                        <h4 class="card-title"><a href="#" class="card-link">
-                                worst types of business accounts you follow on Twitter</a></h4>
-
-                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all
-                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>
-
-                        <ul class="user-info">
-                            <li class="user-item">
-                                <div class="user-link">
-                                    <div class="d-flex align-items-center position-relative">
-                                        <div class="avatar avatar-xs">
-                                            <img class="avatar-img" src="#" alt="avatar">
-                                        </div>
-                                        <span class="ms-3">by <a href="#"
-                                                class="stretched-link text-reset btn-link">Samuel</a></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item-date">Jan 22, 2022</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">
-                    </div>
-                    <div class="card-info">
-                        <h4 class="card-title"><a href="#" class="card-link">12
-                                worst types of business accounts you follow on Twitter</a></h4>
-
-                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all
-                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>
-
-                        <ul class="user-info">
-                            <li class="user-item">
-                                <div class="user-link">
-                                    <div class="d-flex align-items-center position-relative">
-                                        <div class="avatar avatar-xs">
-                                            <img class="avatar-img" src="#" alt="avatar">
-                                        </div>
-                                        <span class="ms-3">by <a href="#"
-                                                class="stretched-link text-reset btn-link">Samuel</a></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item-date">Jan 22, 2022</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">
-                    </div>
-                    <div class="card-info">
-                        <h4 class="card-title"><a href="#" class="card-link">12
-                                worst types of business accounts you follow on Twitter</a></h4>
-
-                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all
-                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>
-
-                        <ul class="user-info">
-                            <li class="user-item">
-                                <div class="user-link">
-                                    <div class="d-flex align-items-center position-relative">
-                                        <div class="avatar avatar-xs">
-                                            <img class="avatar-img" src="#" alt="avatar">
-                                        </div>
-                                        <span class="ms-3">by <a href="#"
-                                                class="stretched-link text-reset btn-link">Samuel</a></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item-date">Jan 22, 2022</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img class="card-img" src="{{url_for('static', filename='pictures/04.jpg')}}" alt="Card image">
-                    </div>
-                    <div class="card-info">
-                        <h4 class="card-title"><a href="#" class="card-link">12
-                                worst types of business accounts you follow on Twitter</a></h4>
-
-                        <p class="card-text">He moonlights difficult engrossed it, sportsmen. Interested has all
-                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to</p>
-
-                        <ul class="user-info">
-                            <li class="user-item">
-                                <div class="user-link">
-                                    <div class="d-flex align-items-center position-relative">
-                                        <div class="avatar avatar-xs">
-                                            <img class="avatar-img" src="#" alt="avatar">
-                                        </div>
-                                        <span class="ms-3">by <a href="#"
-                                                class="stretched-link text-reset btn-link">Samuel</a></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item-date">Jan 22, 2022</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
 

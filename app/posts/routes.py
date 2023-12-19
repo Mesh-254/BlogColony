@@ -1,24 +1,43 @@
-from flask import Blueprint, render_template, url_for, flash, redirect, request, abort
+from flask import Blueprint, render_template, url_for, flash, redirect, request, abort, current_app
 from flask_login import current_user, login_required
 from app import db
 from app.models import Post
 from app.posts.forms import PostForm
+from werkzeug.utils import secure_filename
 
+import os
+import secrets
 # create an instance of the blueprint
 posts = Blueprint('posts', __name__)
+
+
+def save_image(image):
+    hash_photo = secrets.token_urlsafe(10)
+    _, file_extension = os.path.splitext(image.filename)
+    image_name = hash_photo + file_extension
+    file_path = os.path.join(current_app, root_path, 'static/images', image)
+    image.save(file_path)
+    return image_name
 
 
 @login_required
 @posts.route('/post/new', methods=['GET', 'POST'])
 def new_post():
+    image_path = None
     form = PostForm()
     if request.method == 'POST' and form.validate_on_submit():
-        if form.image.data:
-            image_path = f"static/images/{form.image.data}"
-            form.image.data.save(image_path)
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        image_data = form.image.data
+        image_filename = secure_filename(image_data.filename)
+        
+        # Save the image to the static folder
+        image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+        image_data.save(image_path)
 
         post = Post(title=form.title.data,
-                    image=form.image.data,
+                    image=image_filename,
                     content=form.content.data,
                     author=current_user)
         db.session.add(post)

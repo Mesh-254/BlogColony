@@ -407,6 +407,7 @@ header {
 
 .blog-items{
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   row-gap: 15px;
@@ -433,8 +434,17 @@ header {
   align-items:center;
   gap: 10px;
   max-width: 100%;
+
 }
 
+.avatar-img{
+  border: 1px solid indianred;
+  border-radius: 50%;
+  width: 40px;
+}
+.item-date{
+
+}
 .card-info h4 a{
   text-decoration: none;
   color: black;

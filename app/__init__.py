@@ -14,9 +14,14 @@ login_manager = LoginManager()
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 
+UPLOAD_FOLDER = 'static/images'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
 def create_app(config_class=Config):
     app = Flask(__name__)
     
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
     # Set strict_slashes to False
     app.url_map.strict_slashes = False
 
