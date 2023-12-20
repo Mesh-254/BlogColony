@@ -7,44 +7,37 @@ from werkzeug.utils import secure_filename
 
 import os
 import secrets
+
 # create an instance of the blueprint
 posts = Blueprint('posts', __name__)
 
 
-def save_image(image):
-    hash_photo = secrets.token_urlsafe(10)
-    _, file_extension = os.path.splitext(image.filename)
-    image_name = hash_photo + file_extension
-    file_path = os.path.join(current_app, root_path, 'static/images', image)
-    image.save(file_path)
-    return image_name
+def save_picture(post_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(post_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(current_app.root_path, 'static/pictures', picture_fn)
+    post_picture.save(picture_path)
+    return picture_fn
 
 
 @login_required
 @posts.route('/post/new', methods=['GET', 'POST'])
 def new_post():
-    image_path = None
     form = PostForm()
+    post = None  # Define post outside the conditional block
     if request.method == 'POST' and form.validate_on_submit():
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        image_data = form.image.data
-        image_filename = secure_filename(image_data.filename)
-        
-        # Save the image to the static folder
-        image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
-        image_data.save(image_path)
-
+        image_post = save_picture(form.image.data)
         post = Post(title=form.title.data,
-                    image=image_filename,
+                    image=image_post,
                     content=form.content.data,
                     author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your Post has been created!', 'success')
         return redirect(url_for('main.home'))
-    return render_template('create_post.html', title='New Post', form=form,
+    # image = url_for('static', filename='images/' + form.image.data)
+    return render_template('create_post.html', title='New Post', form=form, post = post,
                            legend='New Post')
 
 

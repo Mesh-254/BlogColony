@@ -8,7 +8,7 @@ class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     image = FileField('Image', validators=[
         FileRequired(),
-        FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')
+        FileAllowed(['jpg', 'png', 'jpeg'])
     ])
     content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('Post')
