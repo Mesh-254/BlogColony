@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, url_for, flash, redirect, request, abort, current_app
 from flask_login import current_user, login_required
+
+import app
 from app import db
 from app.models import Post
 from app.posts.forms import PostForm
@@ -24,20 +26,24 @@ def save_picture(post_picture):
 @login_required
 @posts.route('/post/new', methods=['GET', 'POST'])
 def new_post():
+    post = None
     form = PostForm()
-    post = None  # Define post outside the conditional block
     if request.method == 'POST' and form.validate_on_submit():
-        image_post = save_picture(form.image.data)
+        image = form.image.data
+        image_post = save_picture(image)
         post = Post(title=form.title.data,
                     image=image_post,
                     content=form.content.data,
                     author=current_user)
+
+        print(post)
         db.session.add(post)
         db.session.commit()
         flash('Your Post has been created!', 'success')
         return redirect(url_for('main.home'))
+
     # image = url_for('static', filename='images/' + form.image.data)
-    return render_template('create_post.html', title='New Post', form=form, post = post,
+    return render_template('create_post.html', title='New Post', form=form, post=post,
                            legend='New Post')
 
 

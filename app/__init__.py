@@ -20,7 +20,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 def create_app(config_class=Config):
     app = Flask(__name__)
     
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    app.config['UPLOAD_FOLDER'] = 'static/images'
 
     # Set strict_slashes to False
     app.url_map.strict_slashes = False

@@ -13,6 +13,7 @@
 
     <!-- Links to an external stylesheet (CSS) called 'style.css' using Flask's 'url_for' function -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </head>
 
 <body>
@@ -256,7 +257,7 @@
 
             <!-- blogs div  -->
             <div class="blog-items">
-{% for post in post %}
+            {% for post in post %}
               <div class="card">
 
                     <div class="image-div">
@@ -267,7 +268,8 @@
                         <h4 class="card-title"><a href="#" class="card-link">
                                 {{ post.title }}</a></h4>
 
-                        <p class="card-text">{{ post.content }}</p>
+                        <p class="card-text" id="text">{{ post.content }}</p>
+                        <a href="{{ url_for('posts.post', post_id=post.id) }}"><button class="read-more" >Read More</button></a>
 
                         <ul class="user-info">
                             <div class="user-item">
