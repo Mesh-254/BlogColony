@@ -14,25 +14,23 @@ import secrets
 posts = Blueprint('posts', __name__)
 
 
-def save_picture(post_picture):
-    random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(post_picture.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join(current_app.root_path, 'static/pictures', picture_fn)
-    post_picture.save(picture_path)
-    return picture_fn
+# def save_picture(post_picture):
+#     random_hex = secrets.token_hex(8)
+#     _, f_ext = os.path.splitext(post_picture.filename)
+#     picture_fn = random_hex + f_ext
+#     picture_path = os.path.join(current_app.root_path, 'static/pictures', picture_fn)
+#     post_picture.save(picture_path)
+#     return picture_fn
 
 
 @login_required
 @posts.route('/post/new', methods=['GET', 'POST'])
 def new_post():
-    post = None
     form = PostForm()
     if request.method == 'POST' and form.validate_on_submit():
-        image = form.image.data
-        image_post = save_picture(image)
+        # image = form.image.data
+        # image_post = save_picture(image)
         post = Post(title=form.title.data,
-                    image=image_post,
                     content=form.content.data,
                     author=current_user)
 
